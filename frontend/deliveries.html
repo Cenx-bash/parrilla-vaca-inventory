@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deliveries · Parrilla Vaca Inventory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="deliveries">
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Stock in</p>
+        <h1>Deliveries</h1>
+        <p class="sub">Every shipment received, and every reversal.</p>
+      </div>
+      <div class="topbar__actions">
+        <button class="btn btn--gold" id="newDelivery" type="button">Record delivery</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="filters">
+        <input class="input" type="date" id="filterFrom">
+        <span class="muted" style="font-size:12px">to</span>
+        <input class="input" type="date" id="filterTo">
+        <select class="input" id="filterItem">
+          <option value="">All items</option>
+        </select>
+        <button class="btn btn--ghost" id="clearFilters" type="button">Clear</button>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Item</th>
+              <th class="num">Qty</th>
+              <th class="num">Unit cost</th>
+              <th class="num">Total</th>
+              <th>Supplier</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="deliveryBody">
+            <tr><td colspan="7" class="empty">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="modalRoot"></div>
+<div class="toast-stack" id="toastStack"></div>
+<script src="https://unpkg.com/lucide@0.414.0/dist/umd/lucide.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

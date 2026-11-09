@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Items · Parrilla Vaca Inventory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="items">
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Catalog</p>
+        <h1>Items</h1>
+        <p class="sub">Every ingredient, beverage, and dry good in the stockroom.</p>
+      </div>
+      <div class="topbar__actions">
+        <button class="btn btn--gold" id="newItem" type="button">Add item</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="filters">
+        <input class="input" type="search" id="filterSearch" placeholder="Search item name">
+        <select class="input" id="filterCategory">
+          <option value="">All categories</option>
+        </select>
+        <select class="input" id="filterStatus">
+          <option value="">All statuses</option>
+          <option value="ok">Ok</option>
+          <option value="low">Low</option>
+          <option value="out">Out</option>
+        </select>
+        <button class="btn btn--ghost" id="clearFilters" type="button">Clear</button>
+      </div>
+
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Category</th>
+              <th class="num">On hand</th>
+              <th class="num">Reorder</th>
+              <th class="num">Par</th>
+              <th class="num">Unit cost</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="itemBody">
+            <tr><td colspan="8" class="empty">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="modalRoot"></div>
+<div class="toast-stack" id="toastStack"></div>
+<script src="https://unpkg.com/lucide@0.414.0/dist/umd/lucide.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

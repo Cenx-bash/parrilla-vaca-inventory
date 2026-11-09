@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard · Parrilla Vaca Inventory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Stockroom</p>
+        <h1>Dashboard</h1>
+        <p class="sub" id="todayLabel"></p>
+      </div>
+      <div class="topbar__actions">
+        <a class="btn btn--ghost" href="usage.html">Log usage</a>
+        <a class="btn btn--gold" href="deliveries.html">Record delivery</a>
+      </div>
+    </header>
+
+    <section class="stats" id="stats"></section>
+
+    <div class="grid grid--2">
+      <section class="card">
+        <header class="card__head">
+          <h2>Needs attention</h2>
+          <a class="link" href="items.html">View all</a>
+        </header>
+        <ul class="feed" id="lowStock"></ul>
+      </section>
+
+      <section class="card">
+        <header class="card__head">
+          <h2>Today</h2>
+        </header>
+        <div class="metrics" id="todaySummary"></div>
+      </section>
+    </div>
+
+    <section class="card mt-16">
+      <header class="card__head">
+        <h2>Inventory value by category</h2>
+      </header>
+      <div id="categoryBreakdown"></div>
+    </section>
+  </main>
+</div>
+
+<div id="modalRoot"></div>
+<div class="toast-stack" id="toastStack"></div>
+<script src="https://unpkg.com/lucide@0.414.0/dist/umd/lucide.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
